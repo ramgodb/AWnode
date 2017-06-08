@@ -15,7 +15,11 @@ module.exports = function(app){
 	});
 
 	app.get('/dbtest', function(req, res) {
-		var result = sql.query('SELECT * FROM tempACCOUNTS');
-		res.send(result);
+		res.write('Processing query...');
+		console.log('begin...');
+		var result = sql.query('SELECT * FROM M_ACCOUNT');
+		console.log('completed...');
+		res.write('result');
+		res.end();
 	});
 }
